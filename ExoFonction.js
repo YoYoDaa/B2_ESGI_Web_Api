@@ -42,21 +42,50 @@ function trialpha(tab) {
 console.log('Ce tableau va être trier par ordre alphabétique : ' + trialpha(tabpays))
 
 // Écrivez une fonction qui prend un nombre en argument et renvoie une chaîne de caractères représentant ce nombre en mots. Par exemple, si l'entrée est 42, la fonction doit retourner "quarante-deux". 
-let unite = ['zero','un', 'deux', 'trois', 'quantre', 'cinq', 'six', 'sept', 'huit', 'neuf']
+let unite = ['zero','un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf']
 let dizaine = ['dix', 'Vingt', 'trente', 'quarante', 'cinquante', 'soixante','soixante-dix', 'quatre-vingt', 'quatre-vingt-dix']
 let intru = ['onze', 'douze', 'treize', 'quatorze', 'quinze', 'seize']
 
 function nbenlettre(nb) {
     if (nb < 10){
-        return unite[(nb)]
+        return unite[nb]
     }
-    
+    else if (10 < nb && nb <= 16) {
+        return intru[nb - 11]
+    }
+    else if (nb % 10 === 0) {
+        return dizaine[nb/10 - 1]
+    }
+    //else if (nb > 10 && nb % 10 != 0 && nb != 91 && nb != 71){
+     //   return dizaine[nb.charAt(0) - 1] + unite[nb % 10 -1]
+   // }
+
 }
 
-console.log(nbenlettre(3))
+console.log('Le nombre 0 : ' + nbenlettre(0))
+console.log('Le nombre 3 : ' + nbenlettre(3))
+console.log('Le nombre 15 : ' + nbenlettre(15))
+console.log('Le nombre 30 : ' + nbenlettre(30))
+console.log('Le nombre 80 : ' + nbenlettre(80))
+console.log('Le nombre 85 : ' + nbenlettre(85))
 
 // Écrivez une fonction qui prend un tableau d'objets et un nom de propriété et renvoie un tableau des valeurs de cette propriété dans chaque objet. 
 
+tabobj = [
+    {name:'Yoann', pays:'France'},
+    {name:'Luigi', pays:'Italie'},
+    {name:'Quantin', pays:'France'},
+    {name:'Flo', pays:'France'}
+]
+
+function propri(tab, nom) {
+    for(element of tab){
+        element[nom]
+    }
+    tab = tab
+}
+
+console.log('tout les names : ' + propri(tabobj));
 // Écrivez une fonction qui prend un tableau de nombres et renvoie un tableau de nombres triés par ordre décroissant.
 
 // Écrivez une fonction qui prend une chaîne de caractères et renvoie une nouvelle chaîne avec toutes les voyelles en majuscules

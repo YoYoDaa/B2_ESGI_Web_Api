@@ -16,3 +16,5 @@ création de tableau
 
 
 instruction if 
+
+rest opérator ou spreed opérator
