@@ -18,3 +18,10 @@ création de tableau
 instruction if 
 
 rest opérator ou spreed opérator
+
+(a, b) => b - a -----> decroissant
+
+a =12
+b = 4
+
+4 - 12 = -8 dans 12 avant 4

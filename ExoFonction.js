@@ -71,24 +71,46 @@ console.log('Le nombre 85 : ' + nbenlettre(85))
 
 // Écrivez une fonction qui prend un tableau d'objets et un nom de propriété et renvoie un tableau des valeurs de cette propriété dans chaque objet. 
 
-tabobj = [
+let tabobj = [
     {name:'Yoann', pays:'France'},
     {name:'Luigi', pays:'Italie'},
     {name:'Quantin', pays:'France'},
     {name:'Flo', pays:'France'}
 ]
 
-function propri(tab, nom) {
+
+
+function propri(tab, prop) {
+    let result = []
     for(element of tab){
-        element[nom]
+        result.push(element[prop]);
     }
-    tab = tab
+    return result
 }
 
-console.log('tout les names : ' + propri(tabobj));
+console.log('tout les names : ' + propri(tabobj, 'name'));
+
 // Écrivez une fonction qui prend un tableau de nombres et renvoie un tableau de nombres triés par ordre décroissant.
 
+const tabnombre = [2, 4, 6, 8, 10, 7, 13]
+
+function tridecroissant(tab) {
+    tab.sort((x, y) => y - x)
+    return tab
+}
+
+console.log(tridecroissant(tabnombre))
+
 // Écrivez une fonction qui prend une chaîne de caractères et renvoie une nouvelle chaîne avec toutes les voyelles en majuscules
+
+let caracteree = 'Je suis une phrase avec toutes les voyelles qui sont en majuscule !'
+
+function voyellemaj(string) {
+    string=string.toUpperCase(/[aeiouy]/gm, '')
+    return string
+}
+
+console.log('Voici une phrases avec les voyelles en majuscule : ' + voyellemaj(caracteree))
 
 // Écrivez une fonction qui prend une chaîne de caractères et renvoie le nombre de voyelles dans cette chaîne.
 
