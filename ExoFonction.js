@@ -132,4 +132,20 @@ console.log('Et avec le replace : ' + voyellemaj2(caract));
 
 // Écrivez une fonction qui prend une chaîne de caractères et renvoie le nombre de voyelles dans cette chaîne.
 
+let sixvoy = 'aaaeee'
+let dixvoy = 'aqqqqeddddyuhhouygggggeaihhh'
+
+function countvoy(string) {
+    let voyelles = "aeiouyAEIOUY"
+    let count = 0
+
+    for (let i = 0; i < string.length; i++) {
+        if (voyelles.includes(string[i])) {
+            count++
+        }
+    }
+    return count
+}
+
+console.log('Nombre de voyelles : ' + countvoy(caract) + ' & ' + countvoy(sixvoy) + ' & ' + countvoy(dixvoy));
 // Écrivez une fonction qui prend une chaîne de caractères et renvoie une nouvelle chaîne avec toutes les consonnes en majuscules.
