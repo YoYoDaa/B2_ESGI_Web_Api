@@ -103,14 +103,32 @@ console.log(tridecroissant(tabnombre))
 
 // Écrivez une fonction qui prend une chaîne de caractères et renvoie une nouvelle chaîne avec toutes les voyelles en majuscules
 
-let caracteree = 'Je suis une phrase avec toutes les voyelles qui sont en majuscule !'
+let caract = 'Je suis une phrase avec toutes les voyelles qui sont en majuscule !'
 
 function voyellemaj(string) {
-    string=string.toUpperCase(/[aeiouy]/gm, '')
-    return string
+    const voyelles = ['a', 'e', 'i', 'o', 'u', 'y']
+    let string2 = '';
+    for (let i = 0; i < string.length; i++) {
+        if (voyelles.includes(string[i])) {
+            string2 += string[i].toUpperCase()
+        } else {
+            string2 += string[i]
+        }
+    }
+    return string2
 }
 
-console.log('Voici une phrases avec les voyelles en majuscule : ' + voyellemaj(caracteree))
+console.log('Voici une phrases avec les voyelles en majuscule : ' + voyellemaj(caract))
+
+//faire la même en utilisant le .replace (callback)
+
+function voyellemaj2(string) {
+    return string.replace(/[aeiouy]/gm, function (string2) {
+        return string2.toUpperCase()
+    })
+}
+
+console.log('Et avec le replace : ' + voyellemaj2(caract));
 
 // Écrivez une fonction qui prend une chaîne de caractères et renvoie le nombre de voyelles dans cette chaîne.
 
