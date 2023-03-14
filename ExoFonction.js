@@ -148,4 +148,13 @@ function countvoy(string) {
 }
 
 console.log('Nombre de voyelles : ' + countvoy(caract) + ' & ' + countvoy(sixvoy) + ' & ' + countvoy(dixvoy));
+
 // Écrivez une fonction qui prend une chaîne de caractères et renvoie une nouvelle chaîne avec toutes les consonnes en majuscules.
+
+function consonnemaj(string) {
+    return string.replace(/[bcdfghjklmnpqrstvwxyz]/gm, function (string2) {
+        return string2.toUpperCase()
+    })
+}
+
+    console.log('Voici une phrases avec les voyelles en majuscule : ' + consonnemaj(caract));
